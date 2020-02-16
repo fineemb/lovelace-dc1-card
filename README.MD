@@ -16,11 +16,11 @@
 + 卡片可以定义多个传感器,显示排插的相关数据
 + 4个switch开关, 3个是插座,还有一个是USB, 可自由排序
 
-## Preview
-![](https://bbs.hassbian.com/data/attachment/forum/202002/03/124511gshba79arwahahsi.gif)
+## 预览
+![](https://bbs.hassbian.com/data/attachment/forum/202002/16/230707ym1vllt6elssy8kl.gif)
 
 ## HACS 安装
-Search for Thermostat Card
+搜索DC1, 或者手动添加地址安装
 ## 手动安装
 1. 下载 `dc1-card.js`
 1. 复制到 `www\community\lovelace-dc1-card`
