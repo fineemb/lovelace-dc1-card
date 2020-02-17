@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-15 23:10:06
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-15 23:10:07
+ * @LastEditTime  : 2020-02-18 02:16:06
  */
 
 console.info("%c PHICOMM DC1 CARD \n%c    Version 1.0   ",
@@ -70,7 +70,7 @@ class DC1Card extends HTMLElement {
         const style = document.createElement('style');
         style.textContent = this._cssData();
         card.className = 'dc1';
-        root.appendChild(style);
+        card.appendChild(style);
 
         const container = document.createElement('div');
         container.id = 'container';
