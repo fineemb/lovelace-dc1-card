@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-16 22:33:53
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-16 22:33:53
+ * @LastEditTime  : 2020-02-18 02:19:13
  -->
 
 # Lovelace DC1 Card
@@ -71,5 +71,7 @@
 | entity | entity id | **必选** | 这个配置开关实体,总共必须配置4个
 | title | string | 选项 | 对应开关实体下的名称,如果不配置将读取实体的默认名称,建议配置
 | icon | string | 选项 | 对应开关实体下的图标,如果不配置将读取实体的默认图标,建议配置
+
+**确保所有传感器和开关是有效配置后才能正确显示**
 
 
