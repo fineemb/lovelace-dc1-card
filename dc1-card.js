@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-15 23:10:06
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-18 02:16:06
+ * @LastEditTime  : 2020-02-19 22:40:57
  */
 
 console.info("%c PHICOMM DC1 CARD \n%c    Version 1.0   ",
@@ -18,7 +18,7 @@ class DC1Card extends HTMLElement {
     }
     set hass(hass) {
         let config = this._config;
-        this._config.title = config.title || '排插';
+        this._config.name = config.name || '排插';
         this._hass = hass;
         for(var i=0;i<4;i++){
             this.entitys[i].querySelector("iron-icon.boxicon").setAttribute('icon',config.entitys[i].icon || hass.states[config.entitys[i].entity].attributes.icon);
@@ -60,6 +60,11 @@ class DC1Card extends HTMLElement {
         }else{
             this.cardH = '136px';
         }
+
+        this.background_color = this._config.background_color?this._config.background_color:'var(--paper-card-background-color)';
+        this.title_color = this._config.title_color?this._config.title_color:'var(--icon-color-off)';
+        this.on_color = this._config.on_color?this._config.on_color:'var(--paper-item-icon-active-color)';
+        this.off_color = this._config.off_color?this._config.off_color:'var(--icon-color-off)';
 
         const root = this.shadowRoot;
         if (root.lastChild) root.removeChild(root.lastChild);
@@ -147,6 +152,7 @@ class DC1Card extends HTMLElement {
     left: 0;
     height: 100%;
     width: 100%;
+    background: ${this.background_color};
 }
 #container{
     height: 100%;
@@ -154,15 +160,13 @@ class DC1Card extends HTMLElement {
     display: flex;
 }
 .dc-box-off{
-    --icon-color: var(--icon-color-off);
-    --box-background: var(--paper-card-background-color);
+    --icon-color: ${this.off_color};
     --box-shadow: var(--box-shadow);
     --box-opacity: 0.5;
 }
 .dc-box-on{
-    --icon-color: var(--paper-item-icon-active-color);
-    --box-background: var(--paper-card-background-color);
-    --box-shadow: 0 0 5px var(--accent-color);
+    --icon-color: ${this.on_color};
+    --box-shadow: 0 0 5px ${this.on_color};
     --box-opacity: 1;
 }
 
@@ -170,7 +174,7 @@ class DC1Card extends HTMLElement {
     flex:1;
     margin:0;
     position: relative;
-    color: var(--icon-color);
+    color: ${this.title_color};
 }
 .boxicon{
     width: 100%;
@@ -183,7 +187,6 @@ class DC1Card extends HTMLElement {
     width: 100%;
     display: block;
     text-align: center;
-    color: var(--icon-color-off);
     opacity: 0.4;
     position: relative;
     top: 80%;
