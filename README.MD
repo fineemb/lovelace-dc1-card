@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-16 22:33:53
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-18 02:19:13
+ * @LastEditTime  : 2020-02-19 22:45:53
  -->
 
 # Lovelace DC1 Card
@@ -34,6 +34,10 @@
     ```yaml
             - type: custom:dc1-card
               name: 工作间
+              background_color: var(--paper-card-background-color)
+              title_color: var(--icon-color-off)
+              on_color: var(--paper-item-icon-active-color)
+              off_color: var(--icon-color-off)
               sensors:
                 a: sensor.dianliu
                 w: sensor.gonglv
@@ -71,6 +75,10 @@
 | entity | entity id | **必选** | 这个配置开关实体,总共必须配置4个
 | title | string | 选项 | 对应开关实体下的名称,如果不配置将读取实体的默认名称,建议配置
 | icon | string | 选项 | 对应开关实体下的图标,如果不配置将读取实体的默认图标,建议配置
+| background_color | string | 选项 | 卡片背景颜色,默认不需要配置跟随主题--paper-card-background-color
+| title_color | string | 选项 | 卡片文本颜色,默认不需要配置跟随主题--icon-color-off
+| on_color | string | 选项 | 打开状态颜色,默认不需要配置跟随主题--paper-item-icon-active-color
+| off_color | string | 选项 | 关闭状态颜色,默认不需要配置跟随主题--icon-color-off
 
 **确保所有传感器和开关是有效配置后才能正确显示**
 
