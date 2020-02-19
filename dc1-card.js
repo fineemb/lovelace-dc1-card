@@ -2,9 +2,9 @@
  * @Author        : fineemb
  * @Github        : https://github.com/fineemb
  * @Description   : 
- * @Date          : 2020-02-15 23:10:06
+ * @Date          : 2020-02-15 23:10:06s
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-19 22:40:57
+ * @LastEditTime  : 2020-02-19 23:43:19
  */
 
 console.info("%c PHICOMM DC1 CARD \n%c    Version 1.0   ",
@@ -18,7 +18,6 @@ class DC1Card extends HTMLElement {
     }
     set hass(hass) {
         let config = this._config;
-        this._config.name = config.name || '排插';
         this._hass = hass;
         for(var i=0;i<4;i++){
             this.entitys[i].querySelector("iron-icon.boxicon").setAttribute('icon',config.entitys[i].icon || hass.states[config.entitys[i].entity].attributes.icon);
@@ -60,7 +59,7 @@ class DC1Card extends HTMLElement {
         }else{
             this.cardH = '136px';
         }
-
+        this.name = this._config.name || '排插';
         this.background_color = this._config.background_color?this._config.background_color:'var(--paper-card-background-color)';
         this.title_color = this._config.title_color?this._config.title_color:'var(--icon-color-off)';
         this.on_color = this._config.on_color?this._config.on_color:'var(--paper-item-icon-active-color)';
@@ -87,6 +86,11 @@ class DC1Card extends HTMLElement {
         this.dcInfo.className = 'dcbox';
         container.appendChild(this.dcInfo);
 
+        var nameBox = document.createElement('div');
+        nameBox.id = 'namebox';
+        nameBox.innerHTML = `<div id="name">${this.name}</div>`
+        container.appendChild(nameBox);
+        
         this.entitys = []
 
         for(var i=0;i<4;i++){
@@ -99,6 +103,9 @@ class DC1Card extends HTMLElement {
             this.entitys.push(Box);
             Box.addEventListener('click', (e) => this._toggle(e));
         }
+
+
+
         for (let key in config.sensors) {
             const sensorBox = document.createElement('div');
             sensorBox.id = 'sensorBox-'+key;
@@ -245,6 +252,20 @@ class DC1Card extends HTMLElement {
     flex:0.8;
     text-overflow: clip;
     display: block;
+}
+#namebox{
+    width: 20px;
+    background: #0000000d;
+}
+#name{
+    transform: rotate(90deg);
+    width: 136px;
+    height: 20px;
+    text-align: center;
+    transform-origin: bottom left;
+    margin-top: -20px;
+    color: ${this.title_color};
+    opacity: 0.3;
 }
         `
         return css;

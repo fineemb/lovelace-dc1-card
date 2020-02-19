@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-16 22:33:53
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-19 22:45:53
+ * @LastEditTime  : 2020-02-19 23:48:13
  -->
 
 # Lovelace DC1 Card
@@ -17,7 +17,7 @@
 + 4个switch开关, 3个是插座,还有一个是USB, 可自由排序
 
 ## 预览
-![](https://bbs.hassbian.com/data/attachment/forum/202002/16/230707ym1vllt6elssy8kl.gif)
+![](https://bbs.hassbian.com/data/attachment/forum/202002/19/234739uawn9uwjyw8uwzu5.gif)
 
 ## HACS 安装
 搜索DC1, 或者手动添加地址安装
@@ -65,7 +65,7 @@
 
 | 属性名 | 类型 | 默认 | 描述
 | ---- | ---- | ------- | -----------
-| name | string | 选项 | 这是整个排插的名字,现在还没想好UI部分放哪里
+| name | string | 选项 | 这是整个排插的名字,~~现在还没想好UI部分放哪里~~
 | a | entity id | 选项 | 这里配置电流传感器
 | w | entity id | 选项 | 这里配置功率传感器
 | v | entity id | 选项 | 这里配置电压传感器
