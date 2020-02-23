@@ -4,10 +4,10 @@
  * @Description   : 
  * @Date          : 2020-02-15 23:10:06s
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-19 23:43:19
+ * @LastEditTime  : 2020-02-23 16:58:52
  */
 
-console.info("%c PHICOMM DC1 CARD \n%c    Version 1.0   ",
+console.info("%c PHICOMM DC1 CARD \n%c    Version 1.1.2   ",
 "color: orange; font-weight: bold; background: black", 
 "color: white; font-weight: bold; background: dimgray");
 

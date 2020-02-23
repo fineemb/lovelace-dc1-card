@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-16 22:33:53
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-19 23:48:13
+ * @LastEditTime  : 2020-02-23 16:52:49
  -->
 
 # Lovelace DC1 Card
@@ -32,32 +32,32 @@
     ```
 1. 在Lovelace视图 `views.cards` 内部添加卡片配置
     ```yaml
-            - type: custom:dc1-card
-              name: 工作间
-              background_color: var(--paper-card-background-color)
-              title_color: var(--icon-color-off)
-              on_color: var(--paper-item-icon-active-color)
-              off_color: var(--icon-color-off)
-              sensors:
-                a: sensor.dianliu
-                w: sensor.gonglv
-                v: sensor.dianya
-                today: sensor.jintian
-                yesterday: sensor.zuotian
-                total: sensor.zong
-              entitys: 
-                - entity: switch.dc1_487F56_1
-                  title: USB
-                  icon: mdi:usb-port
-                - entity: switch.dc1_487F56_2
-                  title: 吹风机
-                  icon: mdi:hair-dryer
-                - entity: switch.dc1_487F56_3
-                  title: 台灯
-                  icon: mdi:desk-lamp
-                - entity: switch.dc1_487F56_4
-                  title: 电脑
-                  icon: mdi:desktop-classic
+    type: custom:dc1-card
+    name: 工作间
+    background_color: var(--paper-card-background-color)
+    title_color: var(--icon-color-off)
+    on_color: var(--paper-item-icon-active-color)
+    off_color: var(--icon-color-off)
+    sensors:
+      a: sensor.dianliu
+      w: sensor.gonglv
+      v: sensor.dianya
+      today: sensor.jintian
+      yesterday: sensor.zuotian
+      total: sensor.zong
+    entitys: 
+      - entity: switch.dc1_487F56_1
+        title: USB
+        icon: mdi:usb-port
+      - entity: switch.dc1_487F56_2
+        title: 吹风机
+        icon: mdi:hair-dryer
+      - entity: switch.dc1_487F56_3
+        title: 台灯
+        icon: mdi:desk-lamp
+      - entity: switch.dc1_487F56_4
+        title: 电脑
+        icon: mdi:desktop-classic
     ```
     把`sensor` `switch`还有`title`替换成自己的相关实体
 
