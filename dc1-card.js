@@ -4,10 +4,10 @@
  * @Description   : 
  * @Date          : 2020-02-15 23:10:06s
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-02-23 16:58:52
+ * @LastEditTime  : 2020-05-21 00:15:24
  */
 
-console.info("%c PHICOMM DC1 CARD \n%c    Version 1.1.2   ",
+console.info("%c PHICOMM DC1 CARD \n%c    Version 1.1.3   ",
 "color: orange; font-weight: bold; background: black", 
 "color: white; font-weight: bold; background: dimgray");
 
@@ -20,7 +20,7 @@ class DC1Card extends HTMLElement {
         let config = this._config;
         this._hass = hass;
         for(var i=0;i<4;i++){
-            this.entitys[i].querySelector("iron-icon.boxicon").setAttribute('icon',config.entitys[i].icon || hass.states[config.entitys[i].entity].attributes.icon);
+            this.entitys[i].querySelector("ha-icon.boxicon").setAttribute('icon',config.entitys[i].icon || hass.states[config.entitys[i].entity].attributes.icon);
             this.entitys[i].querySelector("span.dcboxtitle").innerHTML = config.entitys[i].title || hass.states[config.entitys[i].entity].attributes.friendly_name;
             this.entitys[i].className = 'dcbox dc-box-'+ hass.states[config.entitys[i].entity].state;
         }
@@ -93,12 +93,12 @@ class DC1Card extends HTMLElement {
         
         this.entitys = []
 
-        for(var i=0;i<4;i++){
+        for(var i=0;i<this._config.entitys.length;i++){
             var Box = document.createElement('div');
             Box.id = 'dcbox'+i;
             Box.className = 'dcbox';
             Box.setAttribute("data-entity",this._config.entitys[i].entity);
-            Box.innerHTML = `<div class="dcboxcont"><div class="boxf"><span><iron-icon class="boxicon" icon="${this._config.entitys[i].icon}"></iron-icon></span></div></div><span class="dcboxtitle">${this._config.entitys[i].title}</span>`
+            Box.innerHTML = `<div class="dcboxcont"><div class="boxf"><span><ha-icon class="boxicon" icon="${this._config.entitys[i].icon}"></ha-icon></span></div></div><span class="dcboxtitle">${this._config.entitys[i].title}</span>`
             container.appendChild(Box);
             this.entitys.push(Box);
             Box.addEventListener('click', (e) => this._toggle(e));
@@ -141,7 +141,7 @@ class DC1Card extends HTMLElement {
         this._hass.callService('switch', 'toggle', {
             entity_id: entity
           });
-          fireEvent(e,'haptic','success');
+          this.fireEvent(e,'haptic','success');
     }
     _cssData(){
         var css = `
@@ -184,11 +184,12 @@ class DC1Card extends HTMLElement {
     color: ${this.title_color};
 }
 .boxicon{
-    width: 100%;
-    height: 50%;
-    margin-top: 25%;
     color: var(--icon-color);
     opacity: var(--box-opacity);
+    display: block;
+    position: absolute;
+    top: calc( 50% - 12px );
+    left: calc( 50% - 12px );
 }
 .dcboxtitle{
     width: 100%;
