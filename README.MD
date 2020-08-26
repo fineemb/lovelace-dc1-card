@@ -4,7 +4,7 @@
  * @Description   : 
  * @Date          : 2020-02-16 22:33:53
  * @LastEditors   : fineemb
- * @LastEditTime  : 2020-05-21 00:17:58
+ * @LastEditTime  : 2020-08-26 15:37:52
  -->
 
 # Lovelace DC1 Card
@@ -16,11 +16,16 @@
 + 卡片可以定义多个传感器,显示排插的相关数据
 + 4个switch开关, 3个是插座,还有一个是USB, 可自由排序
 ## 更新
+v 1.2.0
++ 优化代码,修复一些小bug
++ 增加前端UI的卡片配置
+
 v 1.1.3 
 + 适配hass 0.110.0 修复图标不显示的问题
 + 排插按钮不固定4个,可任意设置, 但是建议还是4个比较美观
 ## 预览
 ![](https://bbs.hassbian.com/data/attachment/forum/202002/19/234739uawn9uwjyw8uwzu5.gif)
+![](01.png)
 
 ## HACS 安装
 搜索DC1, 或者手动添加地址安装
