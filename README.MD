@@ -9,7 +9,7 @@
 
 # Lovelace DC1 Card
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
 
 斐讯DC1排插卡片,这只是一个Lovelace的前端卡片, 具体硬件部分可以看[罗总的固件](https://github.com/qlwz/esp_dc1).
 
